@@ -24,6 +24,8 @@
         table {
             border-collapse: collapse;
             border: solid 1px #eeeeee;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         table th {
@@ -189,6 +191,51 @@
                             </div>
                         </div>
                     </form>
+                    <br>
+                    <div class="ajax-result">
+                        <div id="result">
+                            
+                        </div>
+                        <button id="btn-ajax" class="btn btn-primary">AJAX</button>
+                    </div>
+                    <script>
+                        $('#btn-ajax').click(() => {
+                            //alert(1);
+                            let typeOfMail = $('#type_of_mail').val();
+                            let weight = $('#weight').val();
+
+                            let values = {
+                                type_of_mail: typeOfMail,
+                                weight: weight
+                            };
+                            $.get('/get_rate_service', values, (data) => {
+                                //console.log(data);
+                                $('#result').empty();
+                                $('#result').append(
+                                    `
+                                    <table>
+                                        <tr>
+                                            <td>Weight </td>
+                                            <td>${data['weight']}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type of Mail</td>
+                                            <td>${data['type_of_mail_desc']}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cost</td>
+                                            <td>${data['cost']}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td>$${data['result']}</td>
+                                        </tr>
+                                    </table>
+                                    `
+                                )
+                            });
+                        });
+                    </script>
                 </div>
             </div>
         </div>

@@ -20,6 +20,10 @@ app.get('/get_rate', (req, res) => {
   res.render('pages/result', getData(req))
 })
 
+app.get('/get_rate_service', (req, res) => {
+  res.json(getData(req))
+})
+
 // Functions
 
 let getData = (req) => {
