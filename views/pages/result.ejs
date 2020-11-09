@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            padding: 1em;
+        }
+        main {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <table>
+            <tr>
+                <td>Weight </td>
+                <td><%= weight %></td>
+            </tr>
+            <tr>
+                <td>Type of Mail</td>
+                <td><%= type_of_mail_desc %></td>
+            </tr>
+            <tr>
+                <td>Cost</td>
+                <td><%= cost %></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>$<%= result %></td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>
